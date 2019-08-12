@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>wethersystem</title>
+  </head>
+
+  <div id="app">
+    <p>{{title}}   /   更新時刻:{{now}}  <button v-on:click="revised($event)">更新</button>   </p>
+  <ul>
+    <li v-if="status==='day'"> 今日 : {{ telop.today }}   最低気温{{ tempL }}℃ / 最高気温{{ tempH }}℃  </li>
+    <li v-if="status==='night'"> 明日 : {{ telop.tomorrow }}  最低気温{{ tempL }}℃ / 最高気温{{ tempH }}℃   </li>   
+  </ul>
+
+  <p><img v-bind:src=url width="200" height="100"></p>  <!-- 天気の画像を取得します -->
+
+   <!-- 天気の概要を表示しています -->
+  <div class="box27">
+      <span class="box-title">{{hinichi}} の概要</span>
+    <p> {{ message }} </p> </div>
+
+    <pre> {{ $data }}</pre>   <!-- debug用です -->
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+  <script src="code_app1.js"></script>
+
+  </html>
+  
