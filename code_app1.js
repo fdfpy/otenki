@@ -54,7 +54,7 @@ var app=new Vue({
     //今日、もしくは明日の天気を取得する
     getTenki:function(){
       //APIにアクセス
-      axios.get('ajax.php?url=http://weather.livedoor.com/forecast/webservice/json/v1?city=350020')
+      axios.get('ajax.php?url=http://weather.livedoor.com/forecast/webservice/json/v1?city=340010')
       .then(function(response){
            //console.log(response.data)   //デバッグ用コード
            //console.log(response.data.forecasts[0].image) //デバッグ用コード
@@ -69,7 +69,7 @@ var app=new Vue({
         //明日の最低気温を取得する。時刻によってはデータがないことがあるのでエラーの場合のフォローをしている
           try{
           this.tempL=response.data.forecasts[1].temperature.min.celsius 
-          }catch(e) { this.tempL='nodata' } //明日の最低気温
+          }catch(e) { this.tempL='NA' } //明日の最低気温
           this.tempH=response.data.forecasts[1].temperature.max.celsius  //明日の最高気温
           this.url=response.data.forecasts[1].image.url //明日の天気の絵を取得 
           this.status='night'       
@@ -80,13 +80,13 @@ var app=new Vue({
           try{
               this.tempL=response.data.forecasts[0].temperature.min.celsius//今日の最低気温 
           }catch(e) {
-            this.tempL="nodata"
+            this.tempL="NA"
          }
         //今日の最高気温取得。 時刻によってはデータがないことがあるのでエラーの場合のフォローをしている
           try{
            this.tempH=response.data.forecasts[0].temperature.max.celsius
          }catch(e) {
-          this.tempH="nodata"
+          this.tempH="NA"
           } 
            this.url=response.data.forecasts[0].image.url //今日の天気の絵を取得     
            this.status='day' 

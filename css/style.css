@@ -23,7 +23,7 @@
 
 .box27 {
     position: relative;
-    margin: 2em 0;
+    margin: 3em 0;
     padding: 0.5em 1em;
     border: solid 3px #62c1ce;
 }
@@ -44,4 +44,63 @@
 .box27 p {
     margin: 0; 
     padding: 0;
+}
+
+
+#box2 {
+    padding: 0.5em 0em;
+    margin: 0em 0em;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    width : 140px ;
+    height : 100px ;
+    position: relative;
+}
+
+
+#box2r {
+    padding: 0.5em 0em;
+    margin: 0em 0em;
+    font-weight: bold;
+    color: red;/*文字色*/
+    background: #FFF;
+    border: solid 3px red;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    width : 140px ;
+    height : 100px ;
+    position: relative;
+    
+}
+
+.block {
+    position: absolute;
+    top: -0.1em; /* #contents内の上から何pxか */
+    left: 0.13em; /* #contents内の左から何pxか */
+    font-size :70pt;
+}
+
+
+
+
+
+.box_left {
+    color: #FFF;
+    width:140px;
+    height:100px;
+    margin-left:10px;
+    float:left;
+    background-color:white;
+}
+.box_wrap {
+    width:640px;
+    height:auto;
+    border:1px solid white;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
 }

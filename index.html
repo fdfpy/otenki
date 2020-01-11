@@ -13,7 +13,21 @@
     <li v-if="status==='night'"> 明日 : {{ telop.tomorrow }}  最低気温{{ tempL }}℃ / 最高気温{{ tempH }}℃   </li>   
   </ul>
 
-  <p><img v-bind:src=url width="200" height="100"></p>  <!-- 天気の画像を取得します -->
+
+
+  <div class="clearfix box_wrap">
+      <div class="box_left">
+          <img v-bind:src=url width="140" height="100"> <!-- 天気の画像を取得します -->
+      </div>
+      <div class="box_left">
+          <div id="box2"><div class="block">{{ tempL }}</div></div>
+      </div>
+      <div class="box_left">
+          <div id="box2r"><div class="block">{{ tempH }}</div></div>
+      </div>
+    </div>
+  
+  
 
    <!-- 天気の概要を表示しています -->
   <div class="box27">
